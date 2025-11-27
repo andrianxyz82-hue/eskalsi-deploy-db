@@ -17,7 +17,10 @@ android {
     }
 
     compileOptions {
+        // WAJIB untuk plugin seperti flutter_local_notifications
         isCoreLibraryDesugaringEnabled = true
+
+        // Java 17 (direkomendasikan Flutter terbaru)
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
@@ -38,5 +41,6 @@ flutter {
 }
 
 dependencies {
-    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.0.4")
+    // FIX UTAMA: upgrade dari 2.0.4 → minimal 2.1.4
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.4")
 }
